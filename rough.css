@@ -1,0 +1,303 @@
+/* ------------------ GENERAL RESET ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ------------------ PAGE BACKGROUND (Full Screen, Fixed & Rich) ------------------ */
+body {
+    /* Full-screen background and gradient */
+    background-color: #e6e6e6; 
+    background-image: linear-gradient(135deg, #f5f5f5 0%, #e6e6e6 100%);
+    min-height: 100vh;
+    /* Use padding to push content down below the fixed navbar */
+    padding-top: 75px; 
+}
+
+/* ------------------ ESSENTIAL TOGGLE CLASS ------------------ */
+.hidden {
+    display: none !important;
+}
+
+/* ------------------ NAVBAR (Fixed Full-Width Header) ------------------ */
+.navbar {
+    /* Made fixed again so it always sits at the top */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Must span the entire screen width */
+    background: #3f51b5; /* Rich Blue Header */
+    color: white;
+    padding: 18px 24px;
+    z-index: 1000; /* Ensure it stays on top of all content */
+    
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    /* Rich look shadow below the header */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem; 
+    font-weight: bold;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-links button {
+    margin-left: 10px;
+    padding: 10px 18px; 
+    background-color: white;
+    color: #3f51b5; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links button:hover {
+    background-color: #e8eaf6; 
+    color: #3f51b5;
+}
+
+
+/* ------------------ MAIN CONTENT AREA ------------------ */
+main {
+    /* Add horizontal padding to main content for responsiveness */
+    padding: 0 20px;
+}
+
+
+/* ------------------ HOME SECTION ------------------ */
+.home {
+    text-align: center;
+    margin-top: 30px; /* Reduced margin since we added padding-top to body */
+}
+
+.home h1 {
+    margin-top: 20px;
+    font-size: 2.2rem; 
+    color: #3f51b5;
+}
+
+/* ------------------ BANNER IMAGE STYLE ------------------ */
+.landscape-photo {
+    width: 80%; 
+    max-height: 400px; 
+    object-fit: cover; 
+    padding: 0;
+    display: block;
+    margin: 40px auto; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* ------------------ FORM SECTION ------------------ */
+.auth-form {
+    padding: 30px 0; /* Adjusted padding as main handles horizontal padding */
+    display: flex;
+    justify-content: center;
+}
+
+.auth-form form {
+    /* Retained form card style for a clean look */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slightly stronger shadow */
+    border: 1px solid #ddd; 
+}
+
+/* Input Group Containers and Spacing */
+.auth-form form > .input-group,
+.auth-form form > .password-container {
+    margin-bottom: 15px; 
+    position: relative;
+    width: 100%;
+}
+.auth-form form > span.error {
+    margin-top: -10px; 
+}
+
+.auth-form h2 {
+    text-align: center;
+    color: #3f51b5; 
+    margin-bottom: 20px;
+}
+
+/* --- Input Icon Styling --- */
+.input-group .icon, .password-container .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d; 
+    font-size: 1.1rem;
+    z-index: 2; 
+}
+
+/* Input base styles */
+input {
+    padding: 10px 10px 10px 40px; 
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Input focus styles */
+input:focus {
+    border-color: #3f51b5; 
+    box-shadow: 0 0 8px rgba(63,81,181,0.4); 
+}
+
+/* --- Password Toggle Styling (right-side) --- */
+.password-container .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px; 
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+    z-index: 3; 
+}
+
+.password-container .password-toggle:hover {
+    color: #3f51b5; 
+}
+
+/* Adjust password input padding to fit BOTH left icon and right toggle */
+.password-container input {
+    padding: 10px 40px 10px 40px; 
+}
+
+
+/* --- ENHANCED SUBMIT BUTTON STYLE --- */
+button.submit-btn {
+    padding: 14px; 
+    background-color: #3f51b5; 
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    font-size: 17px; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+button.submit-btn:hover {
+    background-color: #303f9f; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+}
+
+button.submit-btn:active {
+    background-color: #263238; 
+    transform: translateY(1px); 
+}
+
+
+/* --- ENHANCED PARAGRAPH AND TOGGLE LINK STYLES --- */
+.auth-form p {
+    text-align: center;
+    font-size: 15px; 
+    margin-top: 15px; 
+}
+
+.toggle-link {
+    color: #3f51b5; 
+    cursor: pointer;
+    font-weight: bold; 
+    text-decoration: none; 
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.toggle-link:hover {
+    color: #303f9f; 
+    text-decoration: underline; 
+}
+
+
+/* Input validation colors */
+input.error-input {
+    border: 2px solid red !important;
+    transition: border-color 0.3s ease;
+}
+
+input.success-input {
+    border: 2px solid green !important;
+    transition: border-color 0.3s ease;
+}
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: -8px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+/* ------------------ RESPONSIVE ------------------ */
+@media screen and (max-width: 768px) {
+    /* Remove padding to maximize space on small screens */
+    body {
+        padding-top: 100px;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 24px;
+    }
+
+    .home-img {
+        max-width: 95%;
+    }
+
+    .auth-form form {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-links button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .auth-form h2 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 8px 10px 8px 35px; 
+    }
+    
+    .password-container input {
+        padding: 8px 35px 8px 35px; 
+    }
+
+    button.submit-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
